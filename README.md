@@ -43,3 +43,7 @@
  - 統計モデリング分析
  - 一般化線形モデル
  - 計量経済学
+
+---
+## jupyter notebookをPDFで保存する方法
+ブラウザでnotebookを開き、extension機能のページ目次を閉じて、Command+Pで保存される。
