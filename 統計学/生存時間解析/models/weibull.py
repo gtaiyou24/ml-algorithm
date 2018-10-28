@@ -98,7 +98,7 @@ class WeibullRMLogLikelihood(object):
         return -m / (sigma ** 2) - v / (sigma ** 2)
 
 
-class WeibullSACareerEstimator(AbstractSAThresholdPredicter):
+class WeibullSAEstimator(AbstractSAThresholdPredicter):
     """ワイブル回帰モデル. ニュートン・ラフソン法を用いて最適化する.
 
     Parameters

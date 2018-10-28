@@ -60,7 +60,7 @@ class ExponentialRMLogLikelihood(object):
         return dwdw_logL
 
 
-class ExponentialSACareerEstimator(AbstractSAThresholdPredicter):
+class ExponentialSAEstimator(AbstractSAThresholdPredicter):
     """指数回帰モデル。ニュートン・ラフソン法を用いて最適化する.
 
     Parameters

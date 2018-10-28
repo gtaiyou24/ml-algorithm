@@ -6,7 +6,7 @@ from sksurv.util import check_arrays_survival
 from .survival_analysis_estimator import AbstractSAThresholdPredicter
 
 
-class CoxSACareerEstimator(CoxPHFitter, AbstractSAThresholdPredicter):
+class CoxSAEstimator(CoxPHFitter, AbstractSAThresholdPredicter):
     """Cox比例ハザードモデル.
 
     Parameters
