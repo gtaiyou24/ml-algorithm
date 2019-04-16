@@ -1,0 +1,3 @@
+notebooks/data/raw/*
+notebooks/data/processed/*
+*.txt
