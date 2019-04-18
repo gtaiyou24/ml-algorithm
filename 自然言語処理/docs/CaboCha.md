@@ -1,11 +1,12 @@
 # CaboCha
 
 ## CaboChaのインストール
-Mac
+### Mac
 ```bash
 brew install crf++
 brew install cabocha
 ```
 
-## Pythonバインディングをインストール
+Pythonバインディングをインストールする。
+
 https://github.com/kenkov/cabocha

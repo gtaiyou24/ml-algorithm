@@ -20,11 +20,21 @@ ln -s /usr/local/bin/g++-8 /usr/local/bin/g++
 
 ### mecab-ipadic-NEologdをインストール
 これはWeb上の新語をデフォルトの辞書に追加したもの
+
+**標準設定(一部の辞書はインストールされない)**
 ```bash
 brew install git curl xz
 git clone --depth 1 https://github.com/neologd/mecab-ipadic-neologd.git
 cd mecab-ipadic-neologd
 ./bin/install-mecab-ipadic-neologd -n
+```
+
+**全辞書をインストールする場合**<br>
+```bash
+brew install git curl xz
+git clone --depth 1 https://github.com/neologd/mecab-ipadic-neologd.git
+cd mecab-ipadic-neologd
+./bin/install-mecab-ipadic-neologd -n -a
 ```
 
 ### mecab-python3をインストール
