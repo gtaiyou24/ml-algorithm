@@ -4,7 +4,7 @@ import MeCab
 from collections import namedtuple
 
 
-class MeCabTokenizer(object):
+class MeCabTokenizer:
 
     def __init__(self, user_dic_path='', sys_dic_path=''):
         option = ''
@@ -26,7 +26,7 @@ class MeCabTokenizer(object):
     def tokenize(self, text):
         self._t.parse('')
         chunks = self._t.parse(text.rstrip()).splitlines()[:-1]  # Skip EOS
-        # surface : 形態素
+        # surface : 形態素(単語)
         # pos : 品詞
         token = namedtuple('Token', 'surface, pos, pos_detail1, pos_detail2, pos_detail3,\
                                                                          infl_type, infl_form, base_form, reading, phonetic')

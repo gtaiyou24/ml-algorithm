@@ -1,3 +1,4 @@
-notebooks/data/raw/*
-notebooks/data/processed/*
+notebook/data/raw/*
+notebook/data/processed/*
 *.txt
+.ipynb_checkpoints
