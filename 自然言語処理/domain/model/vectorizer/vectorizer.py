@@ -11,10 +11,10 @@ import numpy as np
 
 from sklearn.feature_extraction.text import TfidfVectorizer
 
-from .preprocessing.cleaning import clean_text, clean_url, clean_html_and_js_tags
-from .preprocessing.normalization import normalize, lemmatize_term
-from .preprocessing.tokenizer import MeCabTokenizer
-from .preprocessing.stopwords import maybe_download, create_stopwords
+from domain.model.tokenizer.cleaning import clean_text, clean_url, clean_html_and_js_tags
+from domain.model.tokenizer.normalization import normalize, lemmatize_term
+from domain.model.tokenizer.tokenizer import MeCabTokenizer
+from domain.model.tokenizer.stopwords import maybe_download, create_stopwords
 
 
 class Vectorizer:

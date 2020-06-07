@@ -5,19 +5,19 @@ import nltk
 from nltk.corpus import wordnet
 
 
-def normalize(text):
+def normalize(text: str) -> str:
     normalized_text = normalize_unicode(text)
     normalized_text = normalize_number(normalized_text)
     normalized_text = lower_text(normalized_text)
     return normalized_text
 
 
-def lower_text(text):
+def lower_text(text: str) -> str:
     """小文字に変換."""
     return text.lower()
 
 
-def normalize_unicode(text, form='NFKC'):
+def normalize_unicode(text: str, form='NFKC') -> str:
     """unicode正規化."""
     normalized_text = unicodedata.normalize(form, text)
     return normalized_text
@@ -35,7 +35,7 @@ def lemmatize_term(term, pos=None):
     return nltk.WordNetLemmatizer().lemmatize(term, pos=pos)
 
 
-def normalize_number(text):
+def normalize_number(text: str) -> str:
     """
     pattern = r'\d+'
     replacer = re.compile(pattern)
