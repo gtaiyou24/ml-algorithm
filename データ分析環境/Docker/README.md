@@ -1,26 +1,24 @@
 # Docker
-Docker環境上でjupyterを起動する方法をまとめました。
 
-Dockerfile.jupyter
+## Dockerfile.gpu
+GPU環境対応のDockerfileです。このDockerfileは以下の前提条件があります。
+
+　- [Dockerfile.gpu](./Dockerfile.gpu) と同階層に`requirements.txt`を作成してあること
+
+```bash
+$ docker build -t ml-gpu:latest Dockerfile.gpu
+$ docker image ls | grep ml-gpu
+$ 
 ```
-FROM jupyter/datascience-notebook
-MAINTAINER gtaiyou24
 
-USER root
+## Dockerfile.jupyter
+jupyterを起動するDockerfileです。このDockerfileは以下の前提条件があります。
 
-# matplotlib日本語化
-RUN curl -L "https://ipafont.ipa.go.jp/IPAexfont/ipaexg00301.zip" > font.zip \
-    && unzip font.zip \
-    && cp ipaexg00301/ipaexg.ttf /opt/conda/lib/python3.7/site-packages/matplotlib/mpl-data/fonts/ttf/ipaexg.ttf \
-    && echo "font.family : IPAexGothic" >>  /opt/conda/lib/python3.7/site-packages/matplotlib/mpl-data/matplotlibrc \
-    && rm -r ./.cache
+ - [Dockerfile.jupyter](./Dockerfile.jupyter) と同階層に`requirements.txt`を作成してあること
 
-# 作業ディレクトリに移動
-WORKDIR /home/jovyan/work
-```
 ```bash
 $ docker build -t ml-jupyter:latest Dockerfile.jupyter
-$ docker image ls 
+$ docker image ls | grep ml-jupyter
 $ docker container run --rm \
     -e GRANT_SUDO=yes \
     -e NB_UID=$UID \
